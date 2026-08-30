@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://mvhwci8inqln"]
+
+[ext_resource type="Script" uid="uid://csrk7qkv8ql3w" path="res://assets/scripts/jugador.gd" id="1_o5qli"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgp6g"]
+albedo_color = Color(0.29803923, 0.6862745, 0.3137255, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
+material = SubResource("StandardMaterial3D_sgp6g")
+size = Vector2(20, 20)
+subdivide_width = 20
+subdivide_depth = 20
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0wfyh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
+albedo_color = Color(0.30588236, 0.8039216, 0.76862746, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0wfyh"]
+material = SubResource("StandardMaterial3D_o5qli")
+radial_segments = 8
+rings = 6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sugp2"]
+
+[sub_resource type="Environment" id="Environment_o5qli"]
+background_color = Color(0.5294118, 0.80784315, 0.92156863, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 5.0
+
+[node name="Main" type="Node3D" unique_id=1168009177]
+
+[node name="Terreno" type="MeshInstance3D" parent="." unique_id=493563084]
+mesh = SubResource("PlaneMesh_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terreno" unique_id=864772001]
+shape = SubResource("ConcavePolygonShape3D_0wfyh")
+
+[node name="jugador" type="CharacterBody3D" parent="." unique_id=488735181]
+script = ExtResource("1_o5qli")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="jugador" unique_id=1590881521]
+mesh = SubResource("SphereMesh_0wfyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="jugador" unique_id=1914468144]
+shape = SubResource("SphereShape3D_sugp2")
+
+[node name="Camera3D" type="Camera3D" parent="jugador" unique_id=389212721]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 5, 8)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1125824115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 30, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1708930860]
+environment = SubResource("Environment_o5qli")
