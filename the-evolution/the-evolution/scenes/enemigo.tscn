@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://05l11mryuvba"]
+
+[ext_resource type="Script" uid="uid://boc43kqusf2do" path="res://assets/scripts/enemigo.gd" id="1_7kcpm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wecl"]
+albedo_color = Color(1, 0.26666668, 0.26666668, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7kcpm"]
+material = SubResource("StandardMaterial3D_1wecl")
+radius = 0.4
+height = 0.8
+radial_segments = 8
+rings = 6
+
+[node name="Enemigo" type="Node3D" unique_id=1499726222]
+script = ExtResource("1_7kcpm")
+
+[node name="Cuerpo" type="MeshInstance3D" parent="." unique_id=942745704]
+mesh = SubResource("SphereMesh_7kcpm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=243041456]

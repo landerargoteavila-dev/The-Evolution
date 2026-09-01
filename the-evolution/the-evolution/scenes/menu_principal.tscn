@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://d0gy8llawj7gx"]
+
+[ext_resource type="Texture2D" uid="uid://bw4fa15wd1uoa" path="res://assets/imagenes/Fondo.png" id="1_i85hu"]
+[ext_resource type="Script" uid="uid://dj85ipmc4vmv8" path="res://assets/scripts/menu_principal.gd" id="1_qcl6i"]
+[ext_resource type="Texture2D" uid="uid://id233tquo58w" path="res://assets/imagenes/menu/titulo_evolution.png" id="2_mk4g1"]
+[ext_resource type="Texture2D" uid="uid://ka7wvoi1ro8n" path="res://assets/imagenes/menu/boton_nuevo_juego.png" id="3_iep14"]
+[ext_resource type="Texture2D" uid="uid://bgsxxq4e6sx2d" path="res://assets/imagenes/menu/boton_opciones.png" id="4_486ty"]
+[ext_resource type="Texture2D" uid="uid://c06a6ouu1bmdp" path="res://assets/imagenes/menu/boton_salir.png" id="5_w5ui5"]
+
+[node name="MenuPrincipal" type="Control" unique_id=1276434533]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qcl6i")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=683118300]
+layout_mode = 0
+offset_left = -26744.0
+offset_top = -7007.0
+offset_right = 28903.0
+offset_bottom = 31234.0
+texture = ExtResource("1_i85hu")
+
+[node name="Titulo" type="TextureRect" parent="." unique_id=1350224587]
+layout_mode = 0
+offset_left = -11526.0
+offset_top = -8324.0
+offset_right = 10977.0
+offset_bottom = 3370.0
+texture = ExtResource("2_mk4g1")
+
+[node name="BotonNuevoJuego" type="TextureButton" parent="." unique_id=1794558068]
+layout_mode = 0
+offset_left = -5742.9995
+offset_top = -1662.9998
+offset_right = -4394.9995
+offset_bottom = -763.99976
+scale = Vector2(10, 10)
+texture_normal = ExtResource("3_iep14")
+
+[node name="BotonOpciones" type="TextureButton" parent="." unique_id=782117371]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 21.825
+anchor_right = 16.375
+anchor_bottom = 21.825
+offset_left = -6162.9995
+offset_top = 3234.9995
+offset_right = -5507.9995
+offset_bottom = 9475.0
+scale = Vector2(10, 10)
+texture_normal = ExtResource("4_486ty")
+
+[node name="BotonSalir" type="TextureButton" parent="." unique_id=1980973039]
+layout_mode = 0
+offset_left = -6241.0005
+offset_top = 8948.0
+offset_right = -1244.0005
+offset_bottom = 12613.0
+scale = Vector2(10, 10)
+texture_normal = ExtResource("5_w5ui5")
